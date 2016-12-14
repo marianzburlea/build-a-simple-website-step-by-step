@@ -5,6 +5,23 @@ block content
     .col-md-9
       h1 Welcome to building a website step by step
       p This is going to be fun!
+      h2 Initialize jade project on your computer
+      p Firstly, we create an empty folder using the make directory command (mkdir) in our console, terminal or command line, a.k.a. CLI.
+      code mkdir workshop-1-step-by-step
+      p Secondly, we change our current working directory path into the newly created directory using change directory (cd) in the CLI.
+      code cd workshop-1-step-by-step
+      p
+        | Lastly, we tell#{' '}
+        a(href="http://yeoman.io/" target="_blank") yeoman
+        | #{' '}to use the#{' '}
+        a(href="https://github.com/larsonjj/generator-yeogurt" target="_blank") yeogurt generator
+        | #{' '}and initialize our project
+      p: img(src="images/initialize-jade-project-on-your-computer.png")
+      p As soon as the setup finishes we're ready to start working like a PRO! All we have to do is to run the following command in the CLI:
+      code gulp serve
+      p Note: if you want to open automatically the project in the browser you can add the flag "--open" like this:
+      code gulp serve --open
+      p: img(src="images/project-init-has-finished-and-we-re-ready-to-start-working.png")
     .col-md-3
       nav
         h2 Navigation
