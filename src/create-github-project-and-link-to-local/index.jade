@@ -1,0 +1,16 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  .row
+    .col-md-9
+      h1 Create github project and link to local
+    .col-md-3
+      nav
+        h2 Navigation
+        ul
+          li: a(href="/") Welcome
+          li: a(href="create-github-project-and-link-to-local") Init GitHub
