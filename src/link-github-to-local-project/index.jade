@@ -5,31 +5,25 @@ block config
   - var baseUrl = '../'
 
 block content
-  .row
-    .col-md-9
-      h1 Link github to local project
-      p: img(src="/images/create-a-new-repository-on-the-command-line.png")
-      p Let's focus a bit explaining the steps in the image above.
-      code echo "# workshop-1-step-by-step" >> README.md
-      p In order to initiate git inside a project we need to have at least one file. This step assumes that you have no file and it'll help you create a file named "README.md" and place some content in it.
-      p This is not the case for us, as running "yo yeogurt" generated for us lots of files, so we'll skip this step.
-      code git add README.md
-      p This will add the file README.md to git. Again this is not our case since we haven't created this file and we want to add the files created by yeogurt generator. We won't skip this step and we'll change this command parameter from README.md to a dot ".", which stands for all files in the current path. So we'll do:
-      code git add .
-      p Next, instead of doing:
-      code git commit -m "first commit"
-      p which you can still do, we'll provide a richer description since it's a good way of learning from the start to be more descriptive in your git commit messages. So we'll do:
-      code git commit -m "first commit for building a website with jade/pug and sass step by step"
-      p this will save the last changes of adding everything to git with the message provided and will look like this in github:
-      p: img(src="/images/first-commit-for-building-a-website-with-jade-pug-and-sass-step-by-step.png")
-      p Next, we link our local git repository to the one on github using the following:
-      code git remote add origin https://github.com/marianzburlea/workshop-1-step-by-step.git
-      p and we make our first push like this:
-      code git push -u origin master
-      p: img(src="/images/link-github-to-local-project.png")
-      p Now workshop 1 is present on GitHub and if you refresh the page on GitHub it should look like this:
-      p: img(src="/images/workshop-1-is-now-on-github.png")
-    .col-md-3
-      nav
-        h2 Navigation
-        include ../_modules/menu
+  h1 Link github to local project
+  p: img(src="/images/create-a-new-repository-on-the-command-line.png")
+  p Let's focus a bit explaining the steps in the image above.
+  code echo "# workshop-1-step-by-step" >> README.md
+  p In order to initiate git inside a project we need to have at least one file. This step assumes that you have no file and it'll help you create a file named "README.md" and place some content in it.
+  p This is not the case for us, as running "yo yeogurt" generated for us lots of files, so we'll skip this step.
+  code git add README.md
+  p This will add the file README.md to git. Again this is not our case since we haven't created this file and we want to add the files created by yeogurt generator. We won't skip this step and we'll change this command parameter from README.md to a dot ".", which stands for all files in the current path. So we'll do:
+  code git add .
+  p Next, instead of doing:
+  code git commit -m "first commit"
+  p which you can still do, we'll provide a richer description since it's a good way of learning from the start to be more descriptive in your git commit messages. So we'll do:
+  code git commit -m "first commit for building a website with jade/pug and sass step by step"
+  p this will save the last changes of adding everything to git with the message provided and will look like this in github:
+  p: img(src="/images/first-commit-for-building-a-website-with-jade-pug-and-sass-step-by-step.png")
+  p Next, we link our local git repository to the one on github using the following:
+  code git remote add origin https://github.com/marianzburlea/workshop-1-step-by-step.git
+  p and we make our first push like this:
+  code git push -u origin master
+  p: img(src="/images/link-github-to-local-project.png")
+  p Now workshop 1 is present on GitHub and if you refresh the page on GitHub it should look like this:
+  p: img(src="/images/workshop-1-is-now-on-github.png")

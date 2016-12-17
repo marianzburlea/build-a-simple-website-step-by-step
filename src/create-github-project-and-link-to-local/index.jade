@@ -5,18 +5,12 @@ block config
   - var baseUrl = '../'
 
 block content
-  .row
-    .col-md-9
-      h1 Create github project and link to local
-      p
-        | Navigate to#{' '}
-        a(href="https://github.com/new", target="_blank") https://github.com/new
-        | #{' '} and create a new github project.
-      p: img(src="/images/create-a-new-github-project.png")
-      p After you hit the create button the next page should look like this
-      p: img(src="/images/after-creation-the-next-page-should-look-like-this.png")
-      p Keep this page open as we'll need it a bit later on.
-    .col-md-3
-      nav
-        h2 Navigation
-        include ../_modules/menu
+  h1 Create github project and link to local
+  p
+    | Navigate to#{' '}
+    a(href="https://github.com/new", target="_blank") https://github.com/new
+    | #{' '} and create a new github project.
+  p: img(src="/images/create-a-new-github-project.png")
+  p After you hit the create button the next page should look like this
+  p: img(src="/images/after-creation-the-next-page-should-look-like-this.png")
+  p Keep this page open as we'll need it a bit later on.

@@ -17,4 +17,10 @@ html(lang='en')
 
   body
     .container-fluid
-      block content
+      .row
+        .col-md-9
+          block content
+        .col-md-3
+          nav
+            h2 Navigation
+            include ../_modules/menu
