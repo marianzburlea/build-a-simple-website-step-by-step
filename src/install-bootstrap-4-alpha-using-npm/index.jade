@@ -1,0 +1,26 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  h1 Install bootstrap 4 alpha using npm
+  p: img(src="/images/install-bootstrap-4-alpha-using-npm.png")
+  p We can install bootstap 4 apha 5 using npm (node package manager) by using this command in the CLI
+  code npm i -D bootstrap@4.0.0-alpha.5
+  p let me explain what each of the words above mean
+  ul
+    li <code>npm</code> stands for Node Package Manager and the rest of them are options or parameters that npm uses to do the task required. In the background npm will go and fetch the project named "bootstrap", unzip the file in the folder "node_modules" and save a reference of this to "package.json"
+    li <code>i</code> which can also be written as <code>install</code> will install it, which is bringing it into the "node_modules" folder. The opposite of install is remove (or unistall) which removes it from "node_modules" if the project no longer needs it.
+    li <code>-D</code> or <code>-save-dev</code>will add a reference of this package (or more of them) to the "package.json" file, in the development dependencies section. This means that its intent is only to help us while developing and it's not meant to end up as code that will be served to the client (the website visitors). At the same time this is a MUST if you and any other computer, like the server that tha website is hosted or if you work in teams, you'll save this change to the repository, it'll end up on GitHub, and the server or team mates can pull this update, run <code>npm i</code> and get the same library of bootstrap as you do so you don't have to worry about version library conflicts or code not working the same way.
+    li <code>bootstrap@4.0.0-alpha.5</code> represents the "bootstrap" library. You can specify the exact version of it by prepending "@" followed by the specific version number like "4.0.0-alpha.5".
+
+  p If we run <code>git status</code> we can see that the previous command made a change to package.json, as mentioned above.
+  p: img(src="/images/package-json-being-updated-by-the-flag-D.png")
+  p Now if we look into the "node_modules" folder we'll find "bootstrap" insalled in there. We are interested in the file "bootstrap.scss", so we expand it's contents and look for its path. as soon as we find it we move to including it into the main SASS file. The path should be "/node_modules/bootstrap/scss/bootstrap.scss"
+  p: img(src="/images/install-bootstrap-and-push-the-change-to-github.png")
+  p So we open the "main.scss" file present in the "src/_styles" and we add the path as showin in this image:
+  p: img(src="/images/import-bootstrap-into-the-main-scss-file.png")
+  p Let's add this change to our repository, which should become a habbit for all of you. We use <code>git status</code> to confirm our changes or see a list of them. In this case we want to add both changes in "package.json" and "main.scss" files, which is optional but good habit. To add all changes we use <code>git add .</code> and we add a message to this using <code>git commit -m "install bootstrap and inculde it in the project"</code>. Our repository has everything it needs to know about this change and in order to get it on GitHub we use <code>git push</code>. Now anyone else, that has access, can pull this change and benefit from it.
+
