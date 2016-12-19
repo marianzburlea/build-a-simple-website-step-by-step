@@ -1,0 +1,30 @@
+extends ../_layouts/base
+
+include ../_modules/mixin/link
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  h1 Top menu
+  p We'll recreate the top menu present at #[+link({text: "bootstrap top menu"})(href="http://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/", target="_blank")]
+  p Firstly let's grab the content that we'll play with and print it out on the screen and in the console.
+  p Let's open a JavaScript line and store in the variable "content" the value of "top-menu"
+  <code>- var content = site.data.content['top-menu'];</code>
+  p Note: whenever you have a "-" hyphen in your variable name you switch from "." dot notation to bracket notation
+  p: i Incorrect
+  p.text-danger - var content = site.data.content.top-menu;
+  p: i Correct
+  p.text-success - var content = site.data.content['top-menu'];
+  p We can now see the content printed directly, where on the screen there is a collection of three [object Object] and the content printed as a string using JSON.stringify().
+  p: img(src="/images/print-top-menu-content-out.png")
+
+  p Let's change our code to match the initial top menu representation
+  p: img(src="/images/initial-top-menu-representation.png")
+  p Now we'll use <code>each item in items</code> technique to iterate through our "top-content" so that "item" will be set with the first value, on the first iteration, second value on the second one and third value on the third. So instead of writing 3 "li" tags, we'll just write one and let Jade figure out how many "li" tags have to be written. In our case it'll be the length of "top-menu", which is 3, because it has 3 objects in it.
+  p: img(src="/images/li-tag-populated-from-content-json.png")
+  p Now we have the content of our "li" tags populated from the content of our "content.json" file. Let's update the code so we have links in our "li" tags.
+  p: img(src="/images/li-tag-now-contain-links.png")
+  p Add bootstrap classes to make the presentation look nicer.
+  p: img(src="/images/add-bootstrap-classes-to-make-the-presentation-look-nicer.png")
