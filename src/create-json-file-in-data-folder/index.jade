@@ -1,0 +1,28 @@
+extends ../_layouts/base
+
+include ../_modules/mixin/link
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  h1 Create json file in data folder
+  p Go and #[+link({text: "grab the JSON content"})(href="https://goo.gl/EObWbX", target="_blank")] and save it into the "data" folder as "content.json".
+  p: img(src="/images/content-json.png")
+  p To access the content of the "top-menu" present in the "content.json" file we'll consider:
+  ul
+    li the "src" as site
+    li the "_data" as data
+    li the name of the file "content.json" as "content"
+    li we are already in the json file, so whatever the structure of the content is
+  p So far, we've got: "site" plus "data" plus "content" plus "top-menu" and we'll write it like this:
+  p <code>site.data.content["top-menu"]</code>
+  p We've created the json content, so let's save this change to GitHub
+  p <code>git status</code>
+  p <code>git add .</code>
+  p <code>git commit -m "Add json content to the project"</code>
+  p <code>git push</code>
+  p: img(src="/images/create-json-content-add-it-to-git-and-push-to-github.png")
+  p GitHub commits section should look like this:
+  p: img(src="/images/github-4-commits-for-project-workshop-1-step-by-step.png")
