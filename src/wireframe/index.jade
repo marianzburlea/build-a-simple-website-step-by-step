@@ -1,0 +1,16 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  h1 Simple wireframe
+  p As we can see in the image below we have this sections that we need to address
+  ul
+    li Top menu
+    li Header
+    li Content (will hold articles and others)
+    li Footer
+  p Since the only thing that changes is the content area, the rest can sit in "base.jade"
+  p: img(src="/images/simple-wireframe.jpg")
