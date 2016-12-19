@@ -1,0 +1,22 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  h1 Set up layout
+  p Let's start by firing up gulp using <code>gulp serve --open</code>
+  p: img(src="/images/fire-up-gulp-serve.png")
+  p Our aim is to create the files for each of the sections that are repeating. We'll create them inside "_modules" folder and name them:
+  ul
+    li top-menu.jade
+    li header.jade
+    li footer.jade
+  p: img(src="/images/create-header-footer-and-top-menu-inside-modules-folder.png")
+  p Now let's open "_layouts/base.jade" and work on the layout structure
+  p: img(src="/images/base-jade-layout-update.png")
+  p Let's also open "index.jade" and do some clean-up.
+  p: img(src="/images/index-jade-clean-up.png")
+
+  p As soon as we'll bring in the JSON content we'll be ready to bring in some content and start to see how the website comes to shape.
