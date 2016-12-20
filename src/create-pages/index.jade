@@ -1,0 +1,20 @@
+extends ../_layouts/base
+
+include ../_modules/mixin/link
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  h1 Create pages
+  p: img(src="/images/there-are-no-pages-for-pricing-and-features.png")
+  p We notice that if we navigate to #[+link({text:"pricing"})(href="/pricing")] or #[+link({text:"features"})(href="/features")] there are no pages present. So let's create them now.
+  p: img(src="/images/create-features-and-pricing.png")
+  p When we use the navigation menu we notice that the page content changes and we go from one page to another just like we wanted to.
+  p: img(src="/images/git-create-features-and-pricing.png")
+  p Let's quickly add this change to GitHub
+  p: <code>git status</code>
+  p: <code>git add .</code>
+  p: <code>git commit -m "create features and pricing"</code>
+  p: <code>git push</code>
