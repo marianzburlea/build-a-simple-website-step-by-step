@@ -1,0 +1,30 @@
+extends ../_layouts/base
+
+include ../_modules/mixin/link
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  h1 Active link
+  p While using the navigation we notice that it's hard to understand which page we are currently visiting. There is no difference among the three links. What we want is to add the "active" class to the link that point to the current page.
+  p: img(src="/images/make-active-link-show.png")
+  p One way to achive this is to make use of the values of the "href" property, which are unique for each page.
+  p: img(src="/images/initialize-current-page-variable-in-each-page.png")
+  p We initialize the "currentPage" variable in each page (home, pricing and features)
+  p: img(src="/images/replace-the-link-in-top-menu-with-an-if-else-condition.png")
+  p Replace the link in "top-menu.jade" file with an if else condition. When the jade compiler will run for each of our pages, it'll find the "currentPage" variable and based on the condition it'll generate one link with the "active" class and the others without.
+  p Let's see how this will work out:
+  ol
+    li First time, when it finds index.jade that generates our home page, the value of the variable "currentPage" would be "/". In the loop that happens in "top-menu.jade", <code>each item in content</code>, when the value of "currentPage" will be equal to the value of "item.href", the "a" tag inside the "li" will get generated with the "active" class and the "nav-link" one. The rest of the "a" tags will only have "nav-link" class.
+    li Second time, when it finds index.jade that generates our pricing page, the value of the variable "currentPage" would be "/pricing". In the loop that happens in "top-menu.jade", <code>each item in content</code>, when the value of "currentPage" will be equal to the value of "item.href", the "a" tag inside the "li" will get generated with the "active" class and the "nav-link" one. The rest of the "a" tags will only have "nav-link" class.
+    li Third and last time, when it finds index.jade that generates our features page, the value of the variable "currentPage" would be "/features". In the loop that happens in "top-menu.jade", <code>each item in content</code>, when the value of "currentPage" will be equal to the value of "item.href", the "a" tag inside the "li" will get generated with the "active" class and the "nav-link" one. The rest of the "a" tags will only have "nav-link" class.
+  p: img(src="/images/git-add-active-feature-to-top-menu.png")
+  p Let's add this to git and push it to GitHub too.
+  p <code>git status</code>
+  p <code>git add .</code>
+  p <code>git commit -m "implement active feature in the top menu navigation"</code>
+  p <code>git push</code>
+  p: img(src="/images/git-add-active-feature-to-top-menu-commits-preview.png")
+  p GitHub commits page should look like the image above.
