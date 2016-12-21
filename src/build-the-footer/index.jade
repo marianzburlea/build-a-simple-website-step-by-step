@@ -1,0 +1,17 @@
+extends ../_layouts/base
+
+include ../_modules/mixin/link
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+  h1 Build the footer
+  p: img(src="/images/footer-json-structure.png")
+  p We can see the the "footer" object has two properties: "menu-list" and "menu-bottom".
+  ol
+    li
+      p The menu list is an array or a collection of objects that have a "title" property and a "list-link" array (or collection). The "list-link" property is composed of objects with a "link" and a "text" property for each of them.
+    li
+      p The menu bottom has a structure that is a bit more simple. It is a collection of objects that have a "link" and a "text" property each.
