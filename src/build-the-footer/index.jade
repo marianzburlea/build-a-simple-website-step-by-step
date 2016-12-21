@@ -15,3 +15,18 @@ block content
       p The menu list is an array or a collection of objects that have a "title" property and a "list-link" array (or collection). The "list-link" property is composed of objects with a "link" and a "text" property for each of them.
     li
       p The menu bottom has a structure that is a bit more simple. It is a collection of objects that have a "link" and a "text" property each.
+  p: img(src="/images/print-the-menu-list-footer-titles.png")
+  p Let's recap how we navigate our json data.
+  ul
+    li "site" is "src"
+    li "data" is "_data"
+    li "content" is "content.json"
+    li "footer" is the property found in the json file
+  p Since we'll be using "site.data.content.footer" multiple times in this file, it's a good practice to store it in a variable and use that variable later on. We can do this using JavaScript like this inside the jade file:
+  p <code>- var footer = site.data.content.footer;</code>
+  p Next we create a "footer" tag, inside it a div with a class "row" and we get ready for our iteration of the "menu-list" array (collection).
+  p: img(src="/images/footer-tag-with-row-in-it.png")
+  p In this iteration of <code>each item in footer['menu-list']</code> "item" will take the value of each of the 4 objects present in "menu-list", starting with the first, followed by the second, third and last one.
+  p: img(src="/images/first-iteration-item-value.png")
+  p This means the value of "item" would be that the first time it iterates through the "menu-list" array (collection).
+  p We can see that "item" has a property of "title" and one of "list-link", which is a collection (array). In jade, we can use \#{item.title} to print the value of it to the browser.
