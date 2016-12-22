@@ -30,3 +30,10 @@ block content
   p: img(src="/images/first-iteration-item-value.png")
   p This means the value of "item" would be that the first time it iterates through the "menu-list" array (collection).
   p We can see that "item" has a property of "title" and one of "list-link", which is a collection (array). In jade, we can use \#{item.title} to print the value of it to the browser.
+  p: img(src="/images/footer-titles-only.png")
+  p At the moment we have the titles only. Let's start working on adding the links too.
+  p: img(src="/images/prepare-footer-structure-for-the-list-links.png")
+  p We've moved the title in its own "h3" tag, added an unordered list "ul" at the same level as the "h3" tag. We also know the "item" has a "title" and a "list-link" property and the "list-link" property is a collection of links, so we can use "each" to loop through the "list-link" of "item".
+  p: img(src="/images/footer-has-list-or-links-generated.png")
+  p Now that we have the list of links being printed out on the screen, let's style it a bit.
+  p: img(src="/images/footer-css-initial-style.png")
